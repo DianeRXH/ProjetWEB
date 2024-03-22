@@ -26,3 +26,82 @@ h1              { border-bottom: 2px solid #eee; }
 
 
 		
+*{
+	margin:  0;
+	padding:  0;
+	text-decoration:  none;
+	liste-style: none;
+	box-sizing: border-box;
+}
+body{
+	font-family: sans-serif ;
+}
+
+/*Le menu*/
+.header{
+	padding:  20px;
+	display:  flex;
+	justify-content:  space-between;
+	width : 100%;
+	align-items: center;
+	background-color: #1E2A2F;
+}
+ul li a{
+	color: white;
+	font-weight:  bold;
+}
+ul li a:hover{
+	color: orange;
+	text-decoration: underline;
+}
+.menu ul{
+	display:  flex;
+}
+.menu ul li{
+	margin:  0 30px;
+	list-style-type:  none;
+}
+
+/*main*/
+main {
+    padding: 20px;
+}
+
+/*About*/
+#About {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+#About h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#Societes {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#Societes > div {
+    flex: 1;
+    padding: 10px;
+    background-color: #fff;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+#Societes > div p {
+    margin-top: 10px;
+}
+
+/*footer*/
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+
