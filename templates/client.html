@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Client</title> 
+    <link rel="stylesheet" href="../static/Client.css">
+  </head>
+  <body>
+    <header class="header">
+        <img src="../static/logo_EG.png" />
+        <nav class="menu">
+            <ul>
+              <li><a href="">Accueil</a></li>
+              <li><a href="">Commander</a></li>
+              <li><a href="">Contact</a></li>
+           </ul>
+        </nav>
+    </header>
+    
+    <h2 class="cmd">Commande</h2>
+    <div class="menu_d">
+    <label for="select_type">Choisissez le type de véhicule</label>
+    </div>
+    <div class="menu_content">
+    <select class="type">
+        <option value="choix">Choisir une option</option>
+        <option value="cco">Châssis court ouvert</option>
+        <option value="ccf">Châssis court fermé</option>
+        <option value="clo">Châssis long ouvert</option>
+        <option value="clf">Châssis long fermé</option>
+    </select>
+    </div> 
+
+    <div class="choix_op">
+      <label for="select_type">Choisissez les options de véhicule</label>
+    </div>
+    <section id="options">
+    <form>
+        <div>
+            <input class="case" type="checkbox" id="choix_options" name="options" value="option"/>
+            <label for="choix_options">
+                Antenne
+            </label>
+        </div>
+        <div>
+            <input class="case" type="checkbox" id="choix_options" name="options" value="option"/>
+            <label for="choix_options">
+                Crochet
+            </label>
+        </div>
+        <div>
+            <input class="case" type="checkbox" id="choix_options" name="options" value="option"/>
+            <label for="choix_options">
+                Attache
+            </label>
+        </div>
+    </form></section>
+
+    <div class="btn_cmd">
+        <button type="submit">Commander</button>
+    </div>
+
+    <section id="tab" >
+        <div class="tab1">
+    <h2>Suivi des commandes</h2>
+    <table>
+        <tr>
+          <th>Liste des commandes</th>
+          <th>Heure d'arrivée prévue</th>
+        </tr>
+        <tr>
+          <td>bla</td>
+          <td>bla</td>
+        </tr>
+        <tr>
+          <td>bla</td>
+          <td>bla</td>
+        </tr>
+    </table></div>
+        <div class="tab2">
+    <h2>Commandes passées</h2>
+    <table>
+        <tr>
+          <th>Liste des commandes</th>
+          <th>Heure livrée</th>
+          <th>A l'heure ou en retard</th>
+        </tr>
+        <tr>
+          <td>bla</td>
+          <td>bla</td>
+          <td>bla</td>
+        </tr>
+        <tr>
+          <td>bla</td>
+          <td>bla</td>
+          <td>bla</td>
+        </tr>
+    </table></div>
+    </section>
+    <footer>Version 2.5 © 2014 F. ROSIN</footer>
+  </body>
+</html>
+
