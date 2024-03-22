@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+		<title>Agilog</title>
+		<link rel="stylesheet" type="text/css" href="../static/agilog.css">
+	</head>
+	<body>
+		<header>
+        <img src="../static/logo_EG.png" />
+        <nav class="menu">
+            <ul>
+              <li><a href="Accueil.html">Accueil</a></li>
+              <li><a href="Contact.html">Contact</a></li>
+           </ul>
+        </nav>
+    </header>
+    <main>
+			<section id="sect_timer" >
+				
+			</section>
+			<div class="gestion_cmd">
+				<div class="form_livraison">
+						<form action="#" method="post">
+							<!-- Champ de texte avec texte par défaut -->
+							<label for="champ_texte">Commande à livrer :</label><br>
+							<input type="text" id="champ_texte" name="champ_texte" value="N° de la commande"><br><br>
+							<!-- Bouton de soumission -->
+							<input type="submit" value="Livrer">
+						</form>
+				</div>
+				<div class="cmd_table">
+					<div class="cmd_entetes">
+						<div class="cmd_entete">N° Commande</div>
+						<div class="cmd_entete">Type de Vehicule</div>
+						<div class="cmd_entete">Option</div>
+						<div class="cmd_entete">Heure Prévue de Livraison</div>
+						<div class="cmd_entete">Etat de stock</div>
+					</div>
+					<div class="cmd_ligne">
+						<div class="cmd_cellule">{{ commande_client['ID'] }}</div>
+						<div class="cmd_cellule">{{ voiture['type'] }}</div>
+						<div class="cmd_cellule">{% if voiture['option_1']==1 %}Antenne{% endif %}{% if voiture['option_2']==1 %}Crochet d'attelage{% endif %}{% if voiture['option_3']==1 %}Attache{% endif %}</div>
+						<div class="cmd_cellule">{{ commande['temps'] }}</div>
+						<div class="cmd_cellule">{% if kit_dans_voiture['nombre'] > kit_dans_stock['nombre'] %}Rupture de stock{% endif %}</div>
+					</div>
+				</div>
+			</div>
+    </main>
+    <footer>Version 2.5 © 2014 F. ROSIN</footer>
+	</body>
+</html>
