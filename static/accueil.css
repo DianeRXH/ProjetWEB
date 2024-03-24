@@ -117,5 +117,8 @@ footer {
     background-size: cover;
     background-position: center;
     font-weight:  bold;
+    width : 100%;
+    bottom : 0;
+    position : fixed;
 
 }
