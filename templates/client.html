@@ -10,30 +10,39 @@
         <img src="../static/logo_EG.png" />
         <nav class="menu">
             <ul>
-              <li><a href="">Accueil</a></li>
-              <li><a href="">Commander</a></li>
-              <li><a href="">Contact</a></li>
+              <li><a href="Accueil.html">Accueil</a></li>
+              <li><a href="client.html">Commander</a></li>
+              <li><a href="Contact.html">Contact</a></li>
            </ul>
         </nav>
     </header>
     
+    <main>
     <h2 class="cmd">Commande</h2>
-    <div class="menu_d">
-    <label for="select_type">Choisissez le type de véhicule</label>
-    </div>
-    <div class="menu_content">
-    <select class="type">
-        <option value="choix">Choisir une option</option>
-        <option value="cco">Châssis court ouvert</option>
-        <option value="ccf">Châssis court fermé</option>
-        <option value="clo">Châssis long ouvert</option>
-        <option value="clf">Châssis long fermé</option>
-    </select>
-    </div> 
+    <!--menu déroulant-->
+    <div class="txt">
+    <label for="select_type">Choisissez le type de véhicule</label></div>
+    <section id="type">
+      <div>
+          <button class="chassis" onclick="window.location.href = '';"><img src="../static/CCO.png" /></button>
+          <p> Chassis Court Ouvert</p>
+      </div>
+      <div>
+         <button class="chassis" onclick="window.location.href = '';"><img src="../static/CCF.png" /></button>
+         <p> Chassis Court Fermé</p>
+      </div>
+      <div>
+          <button class="chassis" onclick="window.location.href = '';"><img src="../static/CLO.png" /></button>
+          <p>Chassis Long Ouvert</p>
+      </div>
+      <div>
+        <button class="chassis" onclick="window.location.href = '';"><img src="../static/CLF.png" /></button>
+        <p>Chassis Long Fermé</p>
+      </div>
+    </section>
 
-    <div class="choix_op">
+    <div class="choix_op"> <!--options-->
       <label for="select_type">Choisissez les options de véhicule</label>
-    </div>
     <section id="options">
     <form>
         <div>
@@ -54,13 +63,13 @@
                 Attache
             </label>
         </div>
-    </form></section>
+    </form></section></div>
 
-    <div class="btn_cmd">
-        <button type="submit">Commander</button>
+    <div class="btn_cmd">  <!--boutton-->
+        <button onclick="window.location.href = '';" type="submit">Commander</button>
     </div>
 
-    <section id="tab" >
+    <section id="tab" > <!--tableaux-->
         <div class="tab1">
     <h2>Suivi des commandes</h2>
     <table>
@@ -96,7 +105,7 @@
           <td>bla</td>
         </tr>
     </table></div>
-    </section>
+    </section></main>
     <footer>Version 2.5 © 2014 F. ROSIN</footer>
   </body>
 </html>
