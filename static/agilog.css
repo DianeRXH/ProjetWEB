@@ -51,6 +51,9 @@ header {
 main {
     padding: 20px;
     flex:  1;
+    padding: 20px;
+    overflow-y: auto; /* Ajoute un défilement vertical uniquement lorsque nécessaire */
+    max-height: calc(100vh - 150px); /* Définissez la hauteur maximale de la section principale, ajustez-la selon vos besoins */
 }
 
 .cmd_table {

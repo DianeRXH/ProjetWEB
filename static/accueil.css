@@ -12,6 +12,11 @@ body {
     color: #333;
 }
 
+.hover a {
+    backgroun-color: blue; /* Couleur initiale du lien */
+    transition: color 0.3s; /* Transition fluide de la couleur */
+}
+
 .header {
     background-color: #0c2d31;
     color: #fff;
