@@ -23,7 +23,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-image: url("bkg.png");
+    background-image: url("../All/header.png");
     background-size: cover;
     background-position: center;
 }
@@ -121,7 +121,7 @@ footer {
     color: #fff;
     text-align: center;
     padding: 10px;
-    background-image: url("bkg1.png");
+    background-image: url("../All/footer.png");
     background-size: cover;
     background-position: center;
     font-weight:  bold;
