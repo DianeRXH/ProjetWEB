@@ -1,13 +1,28 @@
-body            { font-family: sans-serif; background: #eee; }
+/* Reset CSS */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+html{
+  background-image: url("background.png");
+  height: 100%;
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+}
+
 a		        { color: #377ba8; }
 
-main        { margin: 1em auto; width: 75%; border: 5px solid #fff;background: white; }
+main        {
+    margin: 1em auto;
+    width: 75%;
+    border: 5px solid #fff;
+    border-radius: 25px}
 
 
 /* Styles généraux */
 body {
-    font-family: Arial, sans-serif;
-    background-color: white; 
     color: #333;
     margin: 0;
     padding: 0;
@@ -17,15 +32,11 @@ body {
 }
 
 header {
-    background-color: #0c2d31;
     color: #fff;
     padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-image: url("../All/header.png");
-    background-size: cover;
-    background-position: center;
 }
 
 .menu ul {
@@ -44,14 +55,13 @@ header {
 }
 
 .menu ul li a:hover {
-    color: #ffc107;
+    color: #ff9fcd;
     font-weight:  bold;
 }
 
 main {
     padding: 20px;
     flex:  1;
-    padding: 20px;
     overflow-y: auto; /* Ajoute un défilement vertical uniquement lorsque nécessaire */
     max-height: calc(100vh - 150px); /* Définissez la hauteur maximale de la section principale, ajustez-la selon vos besoins */
 }
@@ -59,11 +69,12 @@ main {
 .cmd_table {
 	display: table;
 	width: 100%;
+    border-radius: 25px;
 	border: 1px solid #000;
 }
 .cmd_entetes {
 	display: table-header-group;
-	background-color: orange;
+	background-color: pink;
 	font-weight: bold;
 	text-align: center;
 	color: white;
@@ -82,7 +93,7 @@ main {
 .form_livraison {
 	margin-bottom: 20px;
 	padding: 20px;
-	background-color: #E7EFF3;
+	background-color: rgba(211, 211, 211, 0.7);
 	border-radius: 5px;
 	align-items: center;
 }
@@ -117,15 +128,14 @@ main {
 
 
 footer {
-    background-color: #0c2d31;
-    color: #fff;
+    background-color: lightgrey;
+    color: black;
     text-align: center;
     padding: 10px;
-    background-image: url("../All/footer.png");
-    background-size: cover;
-    background-position: center;
     font-weight:  bold;
-    margin-top: auto;
+    width : 100%;
+    bottom : 0;
+    position : fixed;
 
 }
 
