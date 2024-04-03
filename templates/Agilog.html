@@ -17,31 +17,33 @@
         </header>
     <main>
         <section id="sect_timer" >
-
+            <h1>AgiLog</h1>
         </section>
         <div class="gestion_cmd">
             <div class="form_livraison">
                     <form action="#" method="post">
                         <label for="champ_texte">Commande à livrer :</label><br>
                         <!-- Champ de texte avec texte par défaut qui s'efface quand on selectionne la case-->
-                        <input type="text" id="champ_texte" name="champ_texte" placeholder="N° de la commande"><br><br>
+                        <input type="text" id="champ_texte" name="champ_texte" placeholder="N° de la commande">
                         <!-- Bouton de soumission -->
                         <input type="submit" value="Livrer">
                     </form>
             </div>
             <div class="cmd_table">
                 <div class="cmd_entetes">
-                    <div class="cmd_entete">N° Commande</div>
+                    <div class="cmd_entete_1">N° Commande</div>
                     <div class="cmd_entete">Type de Vehicule</div>
                     <div class="cmd_entete">Option</div>
                     <div class="cmd_entete">Heure Prévue de Livraison</div>
-                    <div class="cmd_entete">Etat de stock</div>
+                    <div class="cmd_entete">Etat de la commande </div>
+                    <div class="cmd_entete_3">Etat de stock</div>
                 </div>
                 {% for commande in les_commandes %}
                     <div class="cmd_ligne">
                         <div class="cmd_cellule">{{ commande['ID'] }}</div>
                         <div class="cmd_cellule">{{ commande['type'] }}</div>
                         <div class="cmd_cellule">{% if commande['option_1']==1 %}Antenne<br/> {% endif %}{% if commande['option_2']==1 %}Crochet d'attelage<br/> {% endif %}{% if commande['option_3']==1 %}Attache{% endif %}</div>
+                        <div class="cmd_cellule">{% if commande['etat']==0 %}En attente des pièces Agilean {% endif %}{% if commande['etat']==1 %}En attente de montage{% endif %}{% if commande['etat']==2 %}Livrée{% endif %}</div>
                         <div class="cmd_cellule">{{ commande['temps'] }}</div>
 
                     </div>
@@ -49,9 +51,8 @@
             </div>
 			</div>
     </main>
+    </body>
     <footer>Version 2.5 © 2014 F. ROSIN</footer>
-	</body>
-
 </html>
 <!--
 <div class="cmd_cellule">% if kit_dans_voiture['nombre'] > kit_dans_stock['nombre'] %}Rupture de stock% endif %}</div>

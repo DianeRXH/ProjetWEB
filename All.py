@@ -26,7 +26,7 @@ def afficher_commandes_agilog():
     con.close()
     return render_template('agilog.html', les_commandes=lignes_commandes) #stock=lignes_stock
 
-def kit_par_voiture(type_voiture,options): #ex : options =[0,0,1] à que l'option 3
+def kit_par_voiture(id_voiture):
     con = lite.connect('base_donnees_OREXA_v2.db')
     con.row_factory = lite.Row
     cur = con.cursor()
@@ -38,7 +38,51 @@ def kit_par_voiture(type_voiture,options): #ex : options =[0,0,1] à que l'optio
     return render_template('agilog.html', kits=lignes_kits)
 @app.route('/agilean')
 def agilean():
-    return render_template('agilean.html')
+    con = lite.connect('base_donnees_OREXA_v2.db')
+    con.row_factory = lite.Row
+    cur = con.cursor()
+
+    # Sélectionner les ID des commandes à l'état 0
+    cur.execute("SELECT id FROM commande_client WHERE etat=0")
+    commandes_etat_zero = cur.fetchall()
+
+    kits_par_commande = []
+
+    # Pour chaque commande à l'état 0, récupérer les kits associés
+    for commande in commandes_etat_zero:
+        cur.execute(f"SELECT c.id, c.etat, kdv.kit, k.nom \
+                      FROM kit_dans_voiture kdv \
+                      JOIN commande_client c ON c.voiture=kdv.voiture \
+                      JOIN kit k ON k.ID=kdv.kit \
+                      WHERE c.id=?", (commande['id'],))
+        lignes_kits = cur.fetchall()
+        kits_par_commande.append(lignes_kits)
+
+    con.close()
+
+    return render_template('agilean.html', liste_kits=kits_par_commande)
+
+@app.route('/agilean', methods=['POST'])
+def livrer():
+    valeur = request.form['champ_texte']
+    try:
+        valeur = int(valeur)
+        # Connexion à la base de données
+        con = lite.connect('base_donnees_OREXA_v2.db')
+        con.row_factory = lite.Row
+        cur = con.cursor()
+        cur.execute(f'UPDATE commande_client SET etat = 1 WHERE ID = ?', (valeur,))
+        con.commit()
+        con.close()
+        return ('Kits livrés')
+    except ValueError:
+        return ('Valeur de la commande non connue')
+
+
+
+
+
+
 
 @app.route('/agigreen')
 def agigreen():

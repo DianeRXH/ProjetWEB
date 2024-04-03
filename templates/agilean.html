@@ -3,7 +3,8 @@
 	<head>
 		<meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-		<title>Agilog</title>
+		<title>Agilean</title>
+        <script src="../static/Agi/agi.js"></script>
 		<link rel="stylesheet" type="text/css" href="../static/Agi/agilog_agilean.css">
 	</head>
 	<body>
@@ -17,38 +18,33 @@
     </header>
     <main>
 			<section id="sect_timer" >
-				
+				<h1>AgiLean</h1>
 			</section>
 			<div class="gestion_cmd">
-				<div class="form_livraison">
-						<form action="#" method="post">
-							<!-- Champ de texte avec texte par défaut -->
-							<label for="champ_texte">Commande à livrer :</label><br>
-							<input type="text" id="champ_texte" name="champ_texte" value="N° de la commande"><br><br>
-							<!-- Bouton de soumission -->
-							<input type="submit" value="Livrer">
-						</form>
+				<div class="form_livraison" id="livrerForm">
+                    <form id="livrerForm" method="post">
+                        <label for="champ_texte">Commande à livrer :</label><br>
+                        <input type="text" id="champ_texte" name="champ_texte" placeholder="N° de la commande">
+                        <input type="submit" value="Livrer" ><br>
+                        <div id="messageContainer"></div>
+                    </form>
 				</div>
 				<div class="cmd_table">
 					<div class="cmd_entetes">
-						<div class="cmd_entete">N° Commande</div>
-						<div class="cmd_entete">Type de Vehicule</div>
-						<div class="cmd_entete">Option</div>
-						<div class="cmd_entete">Heure Prévue de Livraison</div>
-						<div class="cmd_entete">Etat de stock</div>
+						<div class="cmd_entete_1">N° Commande</div>
+						<div class="cmd_entete_3">Kit à préparer</div>
 					</div>
-					{% for voiture in commande_client %}
-						<div class="cmd_ligne">
-							<div class="cmd_cellule">{{ commande_client['ID'] }}</div>
-							<div class="cmd_cellule">{{ voiture['type'] }}</div>
-							<div class="cmd_cellule">{% if voiture['option_1']==1 %}Antenne{% endif %}{% if voiture['option_2']==1 %}Crochet d'attelage{% endif %}{% if voiture['option_3']==1 %}Attache{% endif %}</div>
-							<div class="cmd_cellule">{{ commande_client['temps'] }}</div>
-							<div class="cmd_cellule">{% if kit_dans_commande['nombre'] > kit_dans_stock['nombre'] %}Rupture de stock{% endif %}</div>
-						</div>
-					{% endfor %}
+                    {% for kits in liste_kits %}
+					    {% for kit in kits %}
+                            <div class="cmd_ligne">
+                                <div class="cmd_cellule">{{ kit['ID'] }}</div>
+                                <div class="cmd_cellule">{{ kit['kit'] }}</div>
+                            </div>
+					    {% endfor %}
+                    {% endfor %}
 				</div>
 			</div>
     </main>
+    </body>
     <footer>Version 2.5 © 2014 F. ROSIN</footer>
-	</body>
 </html>
