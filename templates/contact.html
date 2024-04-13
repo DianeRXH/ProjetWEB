@@ -1,10 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="stylesheet" type="text/css" href="../static/Contact/contact.css">
+        <script src="../static/Contact/contact.js"></script>
+        <title>Contact</title>
+    </head>
+    <body>
+        <header>
+            <a href="/"><img class='logo-innovalog' src="../static/All/logo_innovalog.png" /></a>
+        </header>
 
-</body>
+        <main>
+            <h1>Nous contacter</h1>
+
+            <form method="post" id="contactForm">  <!-- action="/envoyer-message" -->
+
+                <label for="title-text">Nom* :</label><br>
+                <div class="inputs">
+                    <input class="field" type="text" id="nom" name="nom" placeholder="ARNOUX" required>
+                </div><br><br>
+
+                <label for="title-text">Prénom* :</label><br>
+                <div class="inputs">
+                    <input class="field" type="text" id="prenom" name="prenom" placeholder="Clément" required>
+                </div><br><br>
+
+                <label for="title-text">Entreprise :</label><br>
+                <div class="inputs">
+                    <input class="field" type="text" id="entreprise" name="entreprise" placeholder="POMA">
+                </div><br><br>
+
+                <label for="title-text">Email* :</label><br>
+                <div class="inputs">
+                    <input class="field" type="email" id="email" name="email" onresize=true placeholder="clement.arnoux@ensam.eu" required>
+                </div><br><br>
+
+                <label for="title-text">Message* :</label><br>
+                <div class="inputs">
+                    <textarea class="field" id="message" name="message" rows="4" placeholder="Ecrivez votre message" required></textarea>
+                </div><br><br>
+
+                <div class="button_sent">
+                    <input type="button" class="button_sent" onclick="openPopup()" value="Envoyer">
+                    <div class="popup" id="popup">
+                        <img id='icon'>
+                        <h2 id="popupTitle"></h2>
+                        <p id="popupMessage"></p>
+                    </div>
+                </div>
+            </form>
+
+        </main>
+
+        <footer>
+            <h3>Version 2.5 © 2024 F. ROSIN</h3>
+        </footer>
+    </body>
 </html>
+
