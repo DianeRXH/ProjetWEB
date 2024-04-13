@@ -3,46 +3,37 @@
   <head>
     <meta charset="utf-8">
     <title>Client</title> 
-    <link rel="stylesheet" href="Client.css">
+    <link rel="stylesheet" href="../static/Client.css">
   </head>
   <body>
     <header class="header">
         <img src="../static/logo_EG.png" />
         <nav class="menu">
             <ul>
-              <li><a href="accueil">Accueil</a></li>
-              <li><a href="client">Commander</a></li>
-              <li><a href="contact">Contact</a></li>
+              <li><a href="">Accueil</a></li>
+              <li><a href="">Commander</a></li>
+              <li><a href="">Contact</a></li>
            </ul>
         </nav>
     </header>
     
-    <main>
     <h2 class="cmd">Commande</h2>
-    <!--menu déroulant-->
-    <div class="txt">
-    <label for="select_type">Choisissez le type de véhicule</label></div>
-    <section id="type">
-      <div>
-          <button class="chassis" onclick="window.location.href = '';"><img src="../static/Client/CCO.png" /></button>
-          <p> Chassis Court Ouvert</p>
-      </div>
-      <div>
-         <button class="chassis" onclick="window.location.href = '';"><img src="../static/Client/CCF.png" /></button>
-         <p> Chassis Court Fermé</p>
-      </div>
-      <div>
-          <button class="chassis" onclick="window.location.href = '';"><img src="../static/Client/CLO.png" /></button>
-          <p>Chassis Long Ouvert</p>
-      </div>
-      <div>
-        <button class="chassis" onclick="window.location.href = '';"><img src="../static/Client/CLF.png" /></button>
-        <p>Chassis Long Fermé</p>
-      </div>
-    </section>
+    <div class="menu_d">
+    <label for="select_type">Choisissez le type de véhicule</label>
+    </div>
+    <div class="menu_content">
+    <select class="type">
+        <option value="choix">Choisir une option</option>
+        <option value="cco">Châssis court ouvert</option>
+        <option value="ccf">Châssis court fermé</option>
+        <option value="clo">Châssis long ouvert</option>
+        <option value="clf">Châssis long fermé</option>
+    </select>
+    </div> 
 
-    <div class="choix_op"> <!--options-->
+    <div class="choix_op">
       <label for="select_type">Choisissez les options de véhicule</label>
+    </div>
     <section id="options">
     <form>
         <div>
@@ -63,13 +54,13 @@
                 Attache
             </label>
         </div>
-    </form></section></div>
+    </form></section>
 
-    <div class="btn_cmd">  <!--boutton-->
-        <button onclick="window.location.href = '';" type="submit">Commander</button>
+    <div class="btn_cmd">
+        <button type="submit">Commander</button>
     </div>
 
-    <section id="tab" > <!--tableaux-->
+    <section id="tab" >
         <div class="tab1">
     <h2>Suivi des commandes</h2>
     <table>
@@ -105,7 +96,7 @@
           <td>bla</td>
         </tr>
     </table></div>
-    </section></main>
+    </section>
     <footer>Version 2.5 © 2014 F. ROSIN</footer>
   </body>
 </html>
