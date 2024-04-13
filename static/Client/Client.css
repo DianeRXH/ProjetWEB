@@ -17,7 +17,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-image: url("bkg.png");
+    background-image: url("../All/header.png");
     background-size: cover;
     background-position: center;
 }
@@ -167,7 +167,7 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    background-image: url("bkg1.png");
+    background-image: url("../All/footer.png");
     background-size: cover;
     background-position: center;
     font-weight:  bold;
