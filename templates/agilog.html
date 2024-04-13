@@ -38,15 +38,13 @@
 						<div class="cmd_entete">Heure Prévue de Livraison</div>
 						<div class="cmd_entete">Etat de stock</div>
 					</div>
-					{% for voiture in commande_client %}
-						<div class="cmd_ligne">
-							<div class="cmd_cellule">{{ commande_client['ID'] }}</div>
-							<div class="cmd_cellule">{{ voiture['type'] }}</div>
-							<div class="cmd_cellule">{% if voiture['option_1']==1 %}Antenne{% endif %}{% if voiture['option_2']==1 %}Crochet d'attelage{% endif %}{% if voiture['option_3']==1 %}Attache{% endif %}</div>
-							<div class="cmd_cellule">{{ commande_client['temps'] }}</div>
-							<div class="cmd_cellule">{% if kit_dans_commande['nombre'] > kit_dans_stock['nombre'] %}Rupture de stock{% endif %}</div>
-						</div>
-					{% endfor %}
+					<div class="cmd_ligne">
+						<div class="cmd_cellule">{{ commande_client['ID'] }}</div>
+						<div class="cmd_cellule">{{ voiture['type'] }}</div>
+						<div class="cmd_cellule">{% if voiture['option_1']==1 %}Antenne{% endif %}{% if voiture['option_2']==1 %}Crochet d'attelage{% endif %}{% if voiture['option_3']==1 %}Attache{% endif %}</div>
+						<div class="cmd_cellule">{{ commande['temps'] }}</div>
+						<div class="cmd_cellule">{% if kit_dans_voiture['nombre'] > kit_dans_stock['nombre'] %}Rupture de stock{% endif %}</div>
+					</div>
 				</div>
 			</div>
     </main>

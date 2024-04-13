@@ -9,7 +9,7 @@
 	<a href='{{ url_for("index") }}'>retour à l'index</a><br/><br/>
 	<h1>Ajout d'une personne</h1><br/>
 	{% if msg!="" %}<strong>{{ msg }}</strong><br/><br/>{% endif %}
-	<form method='post' action='{{ url_for("insertion_bdd_personne") }}'>
+	<form method='post' action='{{ url_for("ajouter_personne") }}'>
 	<label for='nom'>Nom</label><input type='text' name='nom' value='{{ nom }}'>
 	<label for='prenom'>Prénom</label><input type='text' name='prenom' value='{{ prenom }}'>
 	<label for='role'>Rôle</label>
