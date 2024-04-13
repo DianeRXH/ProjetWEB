@@ -6,7 +6,7 @@
 </head>
 <body>
 <div class='contenu'>
-	<a href='/'>retour à l'index</a><br/><br/>
+	<a href='{{ url_for("index") }}'>retour à l'index</a><br/><br/>
 	<h1>Liste des personnes</h1><br/>
 	<div class="lp_table">
 		<div class="lp_entetes">
@@ -23,6 +23,5 @@
 		{% endfor %}
 	</div>
 </div>
-
 </body>
 </html>
