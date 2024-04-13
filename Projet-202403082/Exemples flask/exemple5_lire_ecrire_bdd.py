@@ -30,7 +30,7 @@ def afficher_personnes():
 	cur.execute("SELECT nom, prenom, role FROM personnes")
 	lignes = cur.fetchall()
 	con.close()
-	return render_template('affichage_personnes.html', coucou = lignes)
+	return render_template('affichage_personnes.html', personnes = lignes)
 	
 @app.route('/ajouter_personne', methods=['GET', 'POST'])
 def ajouter_personne():
