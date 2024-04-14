@@ -1,0 +1,311 @@
+/* Reset CSS */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+html{
+  background-image: url("../All/background.png");
+  height: 100%;
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+    background-attachment: fixed;
+}
+
+
+body {
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Hauteur minimale de la fenêtre visible */
+}
+
+main        {
+    margin: 1em auto;
+    width: 75%;
+    border: 5px solid #fff;
+    border-radius: 25px;
+    padding: 20px;
+    flex:  1;
+    overflow-y: auto; /* Ajoute un défilement vertical uniquement lorsque nécessaire */
+    max-height: calc(100vh - 150px); /* Définissez la hauteur maximale de la section principale, ajustez-la selon vos besoins */
+}
+
+
+
+h1 {
+    font-family: "Bodoni MT Black", sans-serif;
+    font-size: 400%;
+    margin-bottom: 10px;
+    color : #333;
+    font-weight:  bold;
+    text-align: center;
+}
+
+h2 {
+    font-family: "Bodoni MT Black", sans-serif;
+    font-size: 200%;
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+p {
+    font-family: "Palatino Linotype", sans-serif;
+    font-size: 125%;
+    color: black;
+    font-weight:  bold;
+}
+
+a {
+    font-family: "Palatino Linotype", sans-serif;
+    font-size: 150%;
+    color: black;
+    font-weight:  bold;
+}
+
+
+a:hover {
+    color: pink;
+    font-weight:  bold;
+    transition: color 0.3s; /* Transition fluide de la couleur */
+}
+
+.header {;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Bouton de commande */
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    font-family: "Palatino Linotype", sans-serif;
+    font-size: 20px;
+    background-color: #ff9fcd;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+.button:hover {
+    background-color: #ec72ac;
+}
+
+
+/* popup */
+
+.popup {
+    width: 600px;
+    position: absolute;
+    border-radius: 6px;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    padding: 0 30px 30px;
+    background-color: lightgrey;
+    color: #333333;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+}
+
+.popup-open{
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+}
+.popup h3{
+    font-family: "Bodoni MT Black", sans-serif;
+    font-size: 250%;
+    margin: 30px 0 10px;
+    text-align: center;
+
+}
+label{
+    font-family: "Palatino Linotype", sans-serif;
+    font-size: 150%;
+    margin: 10px;
+    text-align: center;
+    flex: content;
+
+}
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close:hover, .close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+/* Section de sélection des véhicules */
+.all_vehicules {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 20px;
+
+}
+
+.car-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+
+.car-option img {
+    width: 150px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px darkgray;
+    transition: border-color 0.3s;
+    background-color: lightpink;
+}
+
+.car-option.selected img {
+    background-color: deeppink;
+}
+
+/* Section des options */
+.all_options {
+    display: flex; /* Utiliser flexbox */
+    justify-content: center; /* Centrer horizontalement les div d'options */
+}
+
+.option {
+    display: flex; /* Utiliser flexbox */
+    flex-direction: column; /* Aligner les éléments verticalement */
+    align-items: center; /* Centrer les éléments horizontalement */
+    margin: 0 10px; /* Marge entre chaque div d'option */
+}
+
+.option input[type="checkbox"] {
+    margin-top: 5px; /* Ajouter un peu d'espace entre le texte et la checkbox */
+}
+
+/* Champs de l'heure de livraison */
+#heure {
+    margin: auto auto auto 20px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Bouton de commande */
+input[type="button"] {
+    font-family: "Palatino Linotype", sans-serif;
+    font-size: 20px;
+    background-color: #ff9fcd;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="button"]:hover {
+    background-color: #ec72ac;
+}
+
+
+/* Style des options de checkbox */
+.all_options input[type="checkbox"] {
+    margin-right: 10px; /* Espacement entre les options */
+}
+
+/* Style de l'heure de livraison */
+#heure {
+    font-family: "Palatino Linotype", sans-serif;
+    font-size: 16px;
+    padding: 5px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Style du bouton de livraison */
+input[type="button"] {
+    font-family: "Palatino Linotype", sans-serif;
+    font-size: 20px;
+    background-color: #ff9fcd;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border: none; /* Supprimer la bordure par défaut */
+}
+
+input[type="button"]:hover {
+    background-color: #ec72ac;
+}
+
+
+/*   TABLEAUX     */
+
+.cmd_table {
+	width: 100%;
+    border-collapse: collapse;
+    border-radius: 20px;
+	border: 3px double #333;
+
+}
+.cmd_entetes {
+    border-radius: 20px;
+	font-weight: bold;
+	text-align: center;
+    background-color: pink;
+	color: #333;
+    font-size: 120%;
+    width : 100%;
+}
+
+.cmd_entete, .cmd_cellule {
+	border: 1.5px solid #333;
+}
+
+.cmd_ligne {
+    font-weight: bold;
+    font-size: 100%;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+/* Colorer tous les éléments enfants pair */
+.cmd_ligne:nth-child(even) {
+    background-color: rgba(169, 169, 169, 0.4);
+}
+
+/* Colorer tous les éléments enfants impair */
+.cmd_ligne:nth-child(odd){
+    background-color: rgba(211, 211, 211, 0.4);
+}
+
+footer {
+    background-color: lightgrey;
+    color: black;
+    text-align: center;
+    padding: 10px;
+    font-weight:  bold;
+    width : 100%;
+    bottom : 0;
+    position : fixed;
+
+}

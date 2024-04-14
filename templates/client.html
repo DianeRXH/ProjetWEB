@@ -1,112 +1,126 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Client</title> 
-    <link rel="stylesheet" href="../static/Client.css">
-  </head>
-  <body>
-    <header class="header">
-        <img src="../static/logo_EG.png" />
-        <nav class="menu">
-            <ul>
-              <li><a href="Accueil.html">Accueil</a></li>
-              <li><a href="client.html">Commander</a></li>
-              <li><a href="Contact.html">Contact</a></li>
-           </ul>
-        </nav>
-    </header>
-    
-    <main>
-    <h2 class="cmd">Commande</h2>
-    <!--menu déroulant-->
-    <div class="txt">
-    <label for="select_type">Choisissez le type de véhicule</label></div>
-    <section id="type">
-      <div>
-          <button class="chassis" onclick="window.location.href = '';"><img src="../static/CCO.png" /></button>
-          <p> Chassis Court Ouvert</p>
-      </div>
-      <div>
-         <button class="chassis" onclick="window.location.href = '';"><img src="../static/CCF.png" /></button>
-         <p> Chassis Court Fermé</p>
-      </div>
-      <div>
-          <button class="chassis" onclick="window.location.href = '';"><img src="../static/CLO.png" /></button>
-          <p>Chassis Long Ouvert</p>
-      </div>
-      <div>
-        <button class="chassis" onclick="window.location.href = '';"><img src="../static/CLF.png" /></button>
-        <p>Chassis Long Fermé</p>
-      </div>
-    </section>
+	<head>
+		<meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+		<link rel="stylesheet" type="text/css" href="../static/Client/client.css">
+        <script src="../static/Client/client.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <title>Client</title>
+	</head>
+        <body>
+            <header class="header">
+                <a href="/"><img src="../static/All/logo_innovalog.png" /></a>
+                <nav class="menu">
+                    <ul>
+                      <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <main>
+                <section id="sect_timer">
+                <h1>Client</h1>
+                </section>
+                <div class="button-container">
+                    <input type="button" class="button" onclick="openPopupclient()" value="Passez votre commande">
+                </div>
+                <section id="popup" class="popup">
+                    <div class="popup-content">
+                        <span class="close" onclick="closePopupclient()">&times;</span>
+                        <h3>Options de Livraison</h3>
+                        <label id="all_types">Type de véhicule :</label><br>
+                        <form id="deliveryForm">
+                            <div class="all_vehicules">
+                                <div id="vehicule_clo" class="car-option">
+                                    <img src="../static/Client/CLO.png" alt="CLO">
+                                    <input type="radio" id="clo" name="CLO" value="CLO">
+                                    <label for="clo">CLO</label>
+                                </div>
 
-    <div class="choix_op"> <!--options-->
-      <label for="select_type">Choisissez les options de véhicule</label>
-    <section id="options">
-    <form>
-        <div>
-            <input class="case" type="checkbox" id="choix_options" name="options" value="option"/>
-            <label for="choix_options">
-                Antenne
-            </label>
-        </div>
-        <div>
-            <input class="case" type="checkbox" id="choix_options" name="options" value="option"/>
-            <label for="choix_options">
-                Crochet
-            </label>
-        </div>
-        <div>
-            <input class="case" type="checkbox" id="choix_options" name="options" value="option"/>
-            <label for="choix_options">
-                Attache
-            </label>
-        </div>
-    </form></section></div>
+                                <div id="vehicule_clf" class="car-option">
+                                    <img src="../static/Client/CLF.png" alt="CLF">
+                                    <input type="radio" id="clf" name="CLF" value="CLF">
+                                    <label for="clf">CLF</label>
+                                </div>
 
-    <div class="btn_cmd">  <!--boutton-->
-        <button onclick="window.location.href = '';" type="submit">Commander</button>
-    </div>
+                                <div id="vehicule_cco" class="car-option">
+                                    <img src="../static/Client/CCO.png" alt="CCO">
+                                    <input type="radio" id="cco" name="CCO" value="CCO">
+                                    <label for="cco">CCO</label>
+                                </div>
 
-    <section id="tab" > <!--tableaux-->
-        <div class="tab1">
-    <h2>Suivi des commandes</h2>
-    <table>
-        <tr>
-          <th>Liste des commandes</th>
-          <th>Heure d'arrivée prévue</th>
-        </tr>
-        <tr>
-          <td>bla</td>
-          <td>bla</td>
-        </tr>
-        <tr>
-          <td>bla</td>
-          <td>bla</td>
-        </tr>
-    </table></div>
-        <div class="tab2">
-    <h2>Commandes passées</h2>
-    <table>
-        <tr>
-          <th>Liste des commandes</th>
-          <th>Heure livrée</th>
-          <th>A l'heure ou en retard</th>
-        </tr>
-        <tr>
-          <td>bla</td>
-          <td>bla</td>
-          <td>bla</td>
-        </tr>
-        <tr>
-          <td>bla</td>
-          <td>bla</td>
-          <td>bla</td>
-        </tr>
-    </table></div>
-    </section></main>
-    <footer>Version 2.5 © 2014 F. ROSIN</footer>
-  </body>
+                                <div id="vehicule_ccf" class="car-option">
+                                    <img src="../static/Client/CCF.png" alt="CCF">
+                                    <input type="radio" id="ccf" name="CCF" value="CCF">
+                                    <label for="ccf">CCF</label><br>
+                                </div>
+                            </div>
+
+                            <div class="all_options">
+                                <div class="option">
+                                    <label for="option1">Antenne</label>
+                                    <input type="checkbox" id="option1" name="option" value="Antenne">
+                                </div>
+                                <div class="option">
+                                    <label for="option2">Crochet d'attelage</label>
+                                    <input type="checkbox" id="option2" name="option" value="Crochet d'attelage">
+                                </div>
+                                <div class="option">
+                                    <label for="option3">Attache d'accessoires</label>
+                                    <input type="checkbox" id="option3" name="option" value="Attache d'accessoires">
+                                </div>
+                            </div>
+
+
+                            <label for="heure">Heure de Livraison :</label><br>
+                            <input type="time" id="heure" name="heure_livraison"><br>
+
+                            <input type="button" value="Passer la commande" onclick="submitFormclient()">
+                        </form>
+                    </div>
+                </section>
+                <div id="table" >
+                    <h2>Commandes en cours</h2>
+                    <table class="cmd_table">
+                        <tr class="cmd_entetes">
+                            <th class="cmd_entete_1">N° Commande</th>
+                            <th class="cmd_entete">Type de Vehicule</th>
+                            <th class="cmd_entete">Option</th>
+                            <th class="cmd_entete">Heure Prévue de Livraison</th>
+                            <th class="cmd_entete_3">Etat de la commande</th>
+                        </tr>
+                        {% for commande in commandes_en_cours %}
+                            <tr class="cmd_ligne">
+                                <td class="cmd_cellule">{{ commande['ID'] }}</td>
+                                <td class="cmd_cellule">{{ commande['type'] }}</td>
+                                <td class="cmd_cellule">{% if commande['option_1']==1 %}Antenne<br/> {% endif %}{% if commande['option_2']==1 %}Crochet d'attelage<br/> {% endif %}{% if commande['option_3']==1 %}Attache{% endif %}</td>
+                                <td class="cmd_cellule">{% if commande['etat']==0 %}En attente des pièces Agilean {% endif %}{% if commande['etat']==1 %}En attente de montage{% endif %}{% if commande['etat']==2 %}Livrée{% endif %}</td>
+                                <td class="cmd_cellule">{{ commande['temps'] }}</td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                    <h2>Commandes passées</h2>
+                    <table class="cmd_table">
+                        <tr class="cmd_entetes">
+                            <th class="cmd_entete_1">N° Commande</th>
+                            <th class="cmd_entete">Type de Vehicule</th>
+                            <th class="cmd_entete">Option</th>
+                            <th class="cmd_entete">Heure Prévue de Livraison</th>
+                            <th class="cmd_entete_3">A l'heure ou en retard ?</th>
+                        </tr>
+                        {% for commande in commandes_passees %}
+                            <tr class="cmd_ligne">
+                                <td class="cmd_cellule">{{ commande['ID'] }}</td>
+                                <td class="cmd_cellule">{{ commande['type'] }}</td>
+                                <td class="cmd_cellule">{% if commande['option_1']==1 %}Antenne<br/> {% endif %}{% if commande['option_2']==1 %}Crochet d'attelage<br/> {% endif %}{% if commande['option_3']==1 %}Attache{% endif %}</td>
+                                <td class="cmd_cellule">{% if commande['etat']==0 %}En attente des pièces Agilean {% endif %}{% if commande['etat']==1 %}En attente de montage{% endif %}{% if commande['etat']==2 %}Livrée{% endif %}</td>
+                                <td class="cmd_cellule">{{ commande['temps'] }}</td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </main>
+        <footer>Version 2.5 © 2014 F. ROSIN</footer>
+      </body>
 </html>
 
