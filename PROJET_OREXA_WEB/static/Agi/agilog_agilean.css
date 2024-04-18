@@ -1,0 +1,233 @@
+/* Reset CSS */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+html{
+  background-image: url("../All/background.png");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+    background-attachment: fixed;
+
+}
+
+h1 {
+    font-size: 500%;
+    margin-bottom: 10px;
+    color : #333;
+    font-weight:  bold;
+    text-align: center;
+    padding-right: 25px;
+}
+
+h2 {
+    font-family: "Bodoni MT Black", sans-serif;
+    font-size: 300%;
+    color: #333;
+}
+
+p {
+    font-family: "Palatino Linotype", sans-serif;
+    font-size: 125%;
+    color: black;
+    font-weight:  bold;
+}
+
+a{
+    font-family: "Palatino Linotype", sans-serif;
+    font-size: 150%;
+    color: black;
+    font-weight:  bold;
+    margin: 0 20px 0;
+}
+
+a:hover {
+    color: pink;
+    font-weight:  bold;
+    transition: color 0.3s; /* Transition fluide de la couleur */
+}
+
+.header {;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main        {
+    margin: 1em auto;
+    width: 75%;
+    border: 5px solid #fff;
+    border-radius: 25px;
+    padding: 20px;
+    flex:  1;
+    overflow-y: auto; /* Ajoute un défilement vertical uniquement lorsque nécessaire */
+    max-height: calc(100vh - 150px); /* Définissez la hauteur maximale de la section principale, ajustez-la selon vos besoins */
+}
+
+
+/* Styles généraux */
+body {
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Hauteur minimale de la fenêtre visible */
+}
+
+header {
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* Styles pour la partie form */
+.form_livraison {
+	margin-bottom: 20px;
+	padding: 20px;
+	background-color: rgba(211, 211, 211, 0.7);
+	border-radius: 5px;
+	align-items: center;
+}
+
+/* Styles pour la label */
+.form_livraison label {
+    font-family: "Palatino Linotype", sans-serif;
+    font-size: 150%;
+    color: black;
+    font-weight:  bold;
+}
+
+
+.form_livraison input[type="text"] {
+    font-family: "Palatino Linotype", sans-serif;
+    font-size: 100%;
+	flex: 1;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+/* Styles pour le bouton */
+.form_livraison input[type="button"] {
+    font-family: "Palatino Linotype", sans-serif;
+    font-size: 100%;
+	background-color: #ff9fcd;
+	color: white;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+.form_livraison input[type="button"]:hover {
+	background-color: #ec72ac;
+}
+
+/*   TABLEAUX     */
+
+.cmd_table {
+	width: 100%;
+    border-collapse: collapse;
+    border-radius: 20px;
+	border: 3px double #333;
+
+}
+.cmd_entetes {
+    border-radius: 20px;
+	font-weight: bold;
+	text-align: center;
+    background-color: pink;
+	color: #333;
+    font-size: 120%;
+    width : 100%;
+}
+
+.cmd_entete, .cmd_cellule {
+	border: 1.5px solid #333;
+}
+
+.cmd_ligne {
+    font-weight: bold;
+    font-size: 100%;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+/* Colorer tous les éléments enfants pair */
+.cmd_ligne:nth-child(even) {
+    background-color: rgba(169, 169, 169, 0.4);
+}
+
+/* Colorer tous les éléments enfants impair */
+.cmd_ligne:nth-child(odd){
+    background-color: rgba(211, 211, 211, 0.4);
+}
+
+
+.popup {
+    width: 30%;
+    position: absolute;
+    border-radius: 6px;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    padding: 0 30px 30px;
+    background-color: lightgrey;
+    color: #333333;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+    text-align: center;
+}
+
+.popup-open{
+    visibility: visible;
+    top: 20%;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+
+.popup img{
+    width: 100px;
+    margin-top: -40px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px darkgray;
+    background-color: #ffd0e1;
+}
+
+.popup h2{
+    font-family: "Bodoni MT Black", sans-serif;
+    font-size: 150%;
+    margin: 20px 0 10px;
+
+}
+
+.popup p{
+    font-family: "Palatino Linotype", sans-serif;
+    font-size: 100%;
+    margin: 20px 0 10px;
+}
+
+
+footer {
+    background-color: lightgrey;
+    color: black;
+    text-align: center;
+    padding: 10px;
+    font-weight:  bold;
+    width : 100%;
+    bottom : 0;
+    position : fixed;
+
+}
+
+
+		

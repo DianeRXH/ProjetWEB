@@ -1,0 +1,122 @@
+/* Reset CSS */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+html{
+  background-image: url("../All/background.png");
+  height: 100%;
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+    background-attachment: fixed;
+}
+
+h1 {
+    font-family: "Bodoni MT Black", sans-serif;
+    font-size: 500%;
+    margin-bottom: 10px;
+    color : #333;
+    font-weight:  bold;
+}
+
+h2 {
+    font-family: "Bodoni MT Black", sans-serif;
+    font-size: 250%;
+    color: #333;
+}
+
+p {
+    font-family: "Palatino Linotype", sans-serif;
+    font-size: 150%;
+    color: black;
+    font-weight:  bold;
+}
+
+a {
+    font-family: "Palatino Linotype", sans-serif;
+    font-size: 125%;
+    color: black;
+    font-weight:  bold;
+}
+
+
+a:hover {
+    color: pink;
+    font-weight:  bold;
+    transition: color 0.3s; /* Transition fluide de la couleur */
+}
+
+.header {;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu ul {
+    list-style-type: none;
+}
+
+.menu ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+main {
+
+  padding: 20px;
+}
+
+#About {
+
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+#Societes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#Societes > div {
+    flex: 1;
+    padding: 20px;
+    background-color: transparent;
+    margin-right: 10px;
+    text-align: center;
+}
+
+
+section input {
+  background-color: pink;
+  border-radius: 50%;
+  padding: 2px;
+  width: 250px;
+    height: 250px;
+  cursor: pointer;
+  margin: 8px;
+    align-items: center;
+
+}
+
+section input:hover {
+  background-color: #ff9fcd;
+
+}
+
+footer {
+    background-color: lightgrey;
+    color: black;
+    text-align: center;
+    padding: 10px;
+    font-weight:  bold;
+    width : 100%;
+    bottom : 0;
+    position : fixed;
+
+}

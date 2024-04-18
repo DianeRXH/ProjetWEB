@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="stylesheet" type="text/css" href="../static/Client/client.css">
+        <script src="../static/Client/client.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <title>Client</title>
+	</head>
+        <body>
+            <header class="header">
+                <a href="/"><img src="../static/All/logo_innovalog.png" /></a>
+                <nav class="menu">
+                    <a href="/contact">Contactez-nous</a>
+                    <a href="/propos">Rencontrez-nous</a>
+                </nav>
+            </header>
+
+            <main>
+                <h1>Client</h1>
+
+                <div class="button-container">
+                    <input type="button" class="button" onclick="openPopupclient()" value="Passez votre commande">
+                </div>
+                <section id="popup" class="popup">
+                    <div class="popup-content">
+                        <span class="close" onclick="closePopupclient()">&times;</span>
+                        <h3>Options de Livraison</h3>
+
+                        <label id="all_types">Type de véhicule :</label><br>
+                        <form id="deliveryForm">
+                            <div class="all_vehicules">
+                                <div id="vehicule_clo" class="car-option">
+                                    <img src="../static/Client/CLO.png" alt="CLO">
+                                    <input type="radio" id="clo" name="vehicule" value="CLO">
+                                    <label for="clo">CLO</label>
+                                </div>
+
+                                <div id="vehicule_clf" class="car-option">
+                                    <img src="../static/Client/CLF.png" alt="CLF">
+                                    <input type="radio" id="clf" name="vehicule" value="CLF">
+                                    <label for="clf">CLF</label>
+                                </div>
+
+                                <div id="vehicule_cco" class="car-option">
+                                    <img src="../static/Client/CCO.png" alt="CCO">
+                                    <input type="radio" id="cco" name="vehicule" value="CCO">
+                                    <label for="cco">CCO</label>
+                                </div>
+
+                                <div id="vehicule_ccf" class="car-option">
+                                    <img src="../static/Client/CCF.png" alt="CCF">
+                                    <input type="radio" id="ccf" name="vehicule" value="CCF">
+                                    <label for="ccf">CCF</label><br>
+                                </div>
+                            </div>
+
+                            <label id="all_options">Choisissez vos options :</label><br>
+                            <div class="all_options">
+                                <div class="option">
+                                    <input type="checkbox" id="option1" name="option" value="0">
+                                    <label for="option1">Antenne</label>
+                                </div>
+                                <div class="option">
+                                    <input type="checkbox" id="option2" name="option" value="1">
+                                    <label for="option2">Crochet d'attelage</label>
+                                </div>
+                                <div class="option">
+                                    <input type="checkbox" id="option3" name="option" value="2">
+                                    <label for="option3">Attache d'accessoires</label>
+                                </div>
+                            </div>
+
+                            <label for="heure">Heure de Commande :</label><br>
+                            <input type="time" id="heure" name="heure_livraison"><br>
+                            <input type="button" value="Commander" onclick="submitFormclient()">
+                        </form>
+                    </div>
+                </section>
+                <div id="table" >
+                    <h2>Commandes en cours</h2>
+                    <table class="cmd_table">
+                        <tr class="cmd_entetes">
+                            <th class="cmd_entete">N° Commande</th>
+                            <th class="cmd_entete">Type de Vehicule</th>
+                            <th class="cmd_entete">Option</th>
+                            <th class="cmd_entete">Etat de la commande</th>
+                            <th class="cmd_entete">Heure Prévue de Livraison</th>
+                        </tr>
+                        {% for commande in commandes_en_cours %}
+                            <tr class="cmd_ligne">
+                                <td class="cmd_cellule">{{ commande['ID'] }}</td>
+                                <td class="cmd_cellule">{{ commande['type'] }}</td>
+                                <td class="cmd_cellule">{% if commande['option_1']==1 %}Antenne<br/> {% endif %}{% if commande['option_2']==1 %}Crochet d'attelage<br/> {% endif %}{% if commande['option_3']==1 %}Attache{% endif %}</td>
+                                <td class="cmd_cellule">
+                                    {% if commande['etat']==0 %}En attente des pièces Agigreen{% endif %}
+                                    {% if commande['etat']==1 %}En attente des pièces Agilean{% endif %}
+                                    {% if commande['etat']==2 %}En attente du montage{% endif %}
+                                    {% if commande['etat']==3 %}Livrée{% endif %}</td>
+                                <td class="cmd_cellule">{{ commande['temps'] }}</td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                    <h2>Commandes passées</h2>
+                    <table class="cmd_table">
+                        <tr class="cmd_entetes">
+                            <th class="cmd_entete">N° Commande</th>
+                            <th class="cmd_entete">Type de Vehicule</th>
+                            <th class="cmd_entete">Option</th>
+                            <th class="cmd_entete">Heure Prévue de Livraison</th>
+
+                        </tr>
+                        {% for commande in commandes_passees %}
+                            <tr class="cmd_ligne">
+                                <td class="cmd_cellule">{{ commande['ID'] }}</td>
+                                <td class="cmd_cellule">{{ commande['type'] }}</td>
+                                <td class="cmd_cellule">
+                                    {% if commande['option_1']==1 %}Antenne<br/> {% endif %}
+                                    {% if commande['option_2']==1 %}Crochet d'attelage<br/> {% endif %}
+                                    {% if commande['option_3']==1 %}Attache{% endif %}</td>
+                                <td class="cmd_cellule">{{ commande['temps'] }}</td>
+
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </main>
+        <footer>Version 2.5 © 2014 F. ROSIN</footer>
+      </body>
+</html>
+

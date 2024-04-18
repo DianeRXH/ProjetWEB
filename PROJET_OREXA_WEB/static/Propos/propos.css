@@ -1,0 +1,122 @@
+/* Reset CSS */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+html{
+  background-image: url("../All/background.png");
+  height: 100%;
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+    background-attachment: fixed;
+}
+
+h1 {
+    font-family: "Bodoni MT Black", sans-serif;
+    font-size: 300%;
+    margin-bottom: 10px;
+    color : #333;
+    font-weight:  bold;
+    text-align: center;
+}
+
+h2 {
+    font-family: "Bodoni MT Black", sans-serif;
+    font-size: 250%;
+    color: #333;
+}
+
+p {
+    font-family: "Palatino Linotype", sans-serif;
+    font-size: 100%;
+    color: black;
+    font-weight:  bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+a {
+    font-family: "Palatino Linotype", sans-serif;
+    font-size: 125%;
+    color: black;
+    font-weight:  bold;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+a:hover {
+    color: pink;
+    font-weight:  bold;
+    transition: color 0.3s; /* Transition fluide de la couleur */
+}
+
+.header {;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+.section {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.person-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.person {
+    text-align: center;
+}
+
+.person img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid lightpink;
+}
+
+.person p {
+    margin: 10px 0;
+}
+
+
+footer {
+    background-color: lightgrey;
+    color: black;
+    text-align: center;
+    padding: 10px;
+    font-weight:  bold;
+    width : 100%;
+    bottom : 0;
+    position : fixed;
+
+}
+
