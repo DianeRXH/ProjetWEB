@@ -4,32 +4,31 @@
 		<meta charset="utf-8" />
         <meta name="viewport" content="width=device-width" />
 		<title>Agilean</title>
-        <script src="../static/Agi/agi.js"></script>
+        <script src="../static/Agi/agilean.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="../static/Agi/agilog_agilean.css">
 	</head>
 	<body>
 		<header>
             <a href="/"><img src="../static/All/logo_innovalog.png" /></a>
-            <nav class="menu">
-                <ul>
-                  <li><a href="/contact">Contact</a></li>
-                </ul>
-            </nav>
+            <a href="/contact">Contactez-nous</a>
         </header>
         <main>
-            <section id="sect_timer" >
-                <h1>AgiLean</h1>
-            </section>
-
+            <h1>AgiLean</h1>
             <div class="gestion_cmd">
                 <div class="form_livraison">
-                        <form action="#" method="post">
-                            <label for="champ_texte">Commande à livrer :</label><br>
-                            <!-- Champ de texte avec texte par défaut qui s'efface quand on selectionne la case-->
+                    <form id="livrerForm" method="post">
+                        <label for="champ_texte">Commande à livrer :</label><br>
+                        <div class="btn">
                             <input type="text" id="champ_texte" name="champ_texte" placeholder="N° de la commande">
-                            <!-- Bouton de soumission -->
-                            <input type="submit" value="Livrer">
-                        </form>
+                            <input type="button" value="Livrer" onclick="openPopupagi()"><br>
+                            <div class="popup" id="popup">
+                                <img id='icon'>
+                                <h2 id="popupTitle"></h2>
+                                <p id="popupMessage"></p>
+                            </div>
+                        </div>
+                    </form>
                 </div>
                 <table class="cmd_table">
                     <tr class="cmd_entetes">
@@ -37,18 +36,22 @@
                         <th class="cmd_entete">Type de Vehicule</th>
                         <th class="cmd_entete">Option</th>
                         <th class="cmd_entete">Heure Prévue de Livraison</th>
-                        <th class="cmd_entete">Etat de la commande </th>
                     </tr>
                     {% for commande in les_commandes %}
                         <tr class="cmd_ligne">
                             <td class="cmd_cellule">{{ commande['ID'] }}</td>
                             <td class="cmd_cellule">{{ commande['type'] }}</td>
-                            <td class="cmd_cellule">{% if commande['option_1']==1 %}Antenne<br/> {% endif %}{% if commande['option_2']==1 %}Crochet d'attelage<br/> {% endif %}{% if commande['option_3']==1 %}Attache{% endif %}</td>
+                            <td class="cmd_cellule">{% if commande['option_1']==1 %}Antenne<br/> {% endif %}
+                                                    {% if commande['option_2']==1 %}Crochet d'attelage<br/> {% endif %}
+                                                    {% if commande['option_3']==1 %}Attache{% endif %}</td>
                             <td class="cmd_cellule">{{ commande['temps'] }}</td>
-                            <td class="cmd_cellule">{% if commande['etat']==0 %}En attente des pièces Agilean {% endif %}{% if commande['etat']==1 %}En attente de montage{% endif %}{% if commande['etat']==2 %}Livrée{% endif %}</td>
-
-
                         </tr>
+                        <tr class="cmd_ligne">
+                                 <td class="cmd_cellule"></td>
+                                 <td class="cmd_cellule"></td>
+                                 <td class="cmd_cellule"></td>
+                                 <td class="cmd_cellule"></td>
+                             </tr>
                     {% endfor %}
                 </table>
             </div>

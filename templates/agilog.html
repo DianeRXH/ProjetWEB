@@ -4,43 +4,52 @@
 		<meta charset="utf-8" />
         <meta name="viewport" content="width=device-width" />
 		<title>Agilog</title>
-		<link rel="stylesheet" type="text/css" href="../static/Agi/agilog_agilean.css">
+        <link rel="stylesheet" type="text/css" href="../static/Agi/agilog_agilean.css">
+        <script src="../static/Agi/agilog.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 	</head>
 	<body>
 		<header>
-        <a href="/"><img src="../static/All/logo_innovalog.png" /></a>
-        <nav class="menu">
-            <ul>
-              <li><a href="/contact">Contact</a></li>
-           </ul>
-        </nav>
+            <a href="/"><img src="../static/All/logo_innovalog.png" /></a>
+            <a href="/contact">Contactez-nous</a>
         </header>
         <main>
-            <section id="sect_timer" >
-                <h1>AgiLog</h1>
-            </section>
-
+            <h1>AgiLog</h1>
             <div class="gestion_cmd">
                 <div class="form_livraison" >
                     <form id="livrerForm" method="post">
                         <label for="champ_texte">Commande à livrer :</label><br>
-                        <input type="text" id="champ_texte" name="champ_texte" placeholder="N° de la commande">
-                        <input type="submit" value="Livrer" ><br>
-                        <div id="messageContainer"></div>
+                        <div class="btn">
+                            <input type="text" id="champ_texte" name="champ_texte" placeholder="N° de la commande">
+                            <input type="button" value="Livrer" onclick="openPopupagi()"><br>
+                            <div class="popup" id="popup">
+                                <img id='icon'>
+                                <h2 id="popupTitle"></h2>
+                                <p id="popupMessage"></p>
+                            </div>
+                        </div>
                     </form>
                 </div>
                 <table class="cmd_table">
                     <tr class="cmd_entetes">
                         <th class="cmd_entete">N° Commande</th>
+                        <th class="cmd_entete">Livraison</th>
                         <th class="cmd_entete">Kit à préparer</th>
                     </tr>
                     {% for kits in liste_kits %}
                         {% for kit in kits %}
                             <tr class="cmd_ligne">
                                 <td class="cmd_cellule">{{ kit['ID'] }}</td>
+                                <td class="cmd_cellule">{{ kit['temps'] }}</td>
                                 <td class="cmd_cellule">{{ kit['kit'] }}</td>
                             </tr>
                         {% endfor %}
+                             <tr class="cmd_ligne">
+                                 <td class="cmd_cellule"></td>
+                                 <td class="cmd_cellule"></td>
+                                 <td class="cmd_cellule"></td>
+                             </tr>
                     {% endfor %}
                 </table>
             </div>
